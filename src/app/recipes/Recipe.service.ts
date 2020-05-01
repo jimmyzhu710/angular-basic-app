@@ -33,5 +33,9 @@ export class RecipeService {
     addIngredientsToShoppingList(ingredients: Ingredient[]){
       this.slSercie.addIngredients(ingredients);
     }
+
+    getRecipe(index:number){
+      return this.recipes[index];
+    }
     
 }

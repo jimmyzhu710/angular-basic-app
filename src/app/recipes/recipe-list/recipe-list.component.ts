@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../Recipe.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
   selector: 'app-recipe-list',
@@ -10,11 +11,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[];
-
+  private rpChangeSub: Subscription;
+  
   constructor(private recipeService: RecipeService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.recipes = this.recipeService.getRecipes();
+    this.recipes = this.recipeService.getRecipes(); 
+    this.rpChangeSub = this.recipeService.recipesChanged.subscribe((recipes: Recipe[])=>{
+      this.recipes = recipes;
+    });
   }
 
   onNewRecipe() {

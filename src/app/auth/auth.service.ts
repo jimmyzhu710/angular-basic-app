@@ -19,7 +19,7 @@ export interface AuthResponseData {
     providedIn: 'root'
 })
 
-export class AuthSercie {
+export class AuthService {
     user = new BehaviorSubject<User>(null);
     private tokenExpirationTimer: any;
 

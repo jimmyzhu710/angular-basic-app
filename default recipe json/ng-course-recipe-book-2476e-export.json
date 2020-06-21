@@ -1,0 +1,28 @@
+{
+  "recipes" : [ {
+    "description" : "Tasty Schnitzel",
+    "imagePath" : "https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG",
+    "ingredients" : [ {
+      "amount" : 1,
+      "name" : "Chips"
+    }, {
+      "amount" : 1,
+      "name" : "Chicken"
+    } ],
+    "name" : "Tasty Schnitzel"
+  }, {
+    "description" : "Cheese Steak Burger",
+    "imagePath" : "https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_Angus_Bacon_%26_Cheese_Steak_Burger.jpg",
+    "ingredients" : [ {
+      "amount" : 1,
+      "name" : "bread"
+    }, {
+      "amount" : 1,
+      "name" : "lettuce"
+    }, {
+      "amount" : 1,
+      "name" : "steak"
+    } ],
+    "name" : "Cheese Steak Burger"
+  } ]
+}

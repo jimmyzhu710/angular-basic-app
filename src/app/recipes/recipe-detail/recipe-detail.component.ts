@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../Recipe.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import * as fromApp from '../../store/app.reducer';
 import { Store } from '@ngrx/store';
 import { map, switchMap } from 'rxjs/operators';
+import * as fromApp from '../../store/app.reducer';
+import * as RecipesAction from '../store/recipe.action';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -41,7 +42,8 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   onDeleteRecipe() {
-    this.recipeService.deleteRecipe(this.id);
+    //this.recipeService.deleteRecipe(this.id);
+    this.store.dispatch(new RecipesAction.DeleteRecipe(this.id));
     this.router.navigate(['/recipes']);
   }
 }
